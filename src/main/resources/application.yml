@@ -1,5 +1,7 @@
 server:
-  port: 8081
+  port: 8281
+img:
+  location: D:/upload/
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -20,6 +22,8 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
+    mvc.static-path-pattern: /**
+    resources.static-locations: file:${img.location}
   thymeleaf:
     cache: false
     check-template-location: true
@@ -27,5 +31,4 @@ spring:
 mybatis:
   mapper-locations: classpath*:mapper/*.xml #注意：一定要对应mapper映射xml文件的所在路径
   type-aliases-package: com.example.editor.demo.entity # 注意：对应实体类的路径
-img:
-  location: D:/upload/
+
